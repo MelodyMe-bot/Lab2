@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Application Form</title>
+
+    <!-- LINK YOUR CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+<form class="registration-form">
+
+<h1>Scholarship Application Form</h1>
+
+<!-- School Name -->
+<div class="form-group">
+    <label>School Name<span class="required">*</span></label>
+    <input type="text" placeholder="Enter your school name" required>
+</div>
+
+<!-- Student Name -->
+<div class="form-group">
+    <label>Student Name<span class="required">*</span></label>
+    <div class="name-row">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+    </div>
+</div>
+
+<!-- Date of Birth -->
+<div class="form-group">
+    <label>Date of Birth<span class="required">*</span></label>
+    <input type="date" required>
+</div>
+
+<!-- Gender -->
+<div class="form-group">
+    <label>Gender<span class="required">*</span></label>
+    <select required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+</div>
+
+<!-- Phone -->
+<div class="form-group">
+    <label>Phone Number<span class="required">*</span></label>
+    <input type="tel" placeholder="xxx xxxx xxxx" required>
+</div>
+
+<!-- Email -->
+<div class="form-group">
+    <label>Email<span class="required">*</span></label>
+    <input type="email" placeholder="example@gmail.com" required>
+</div>
+
+<!-- Address -->
+<div class="form-group">
+    <label>Address<span class="required">*</span></label>
+    <div class="address-row">
+        <select required>
+            <option value="">Select Country</option>
+            <option>Cambodia</option>
+            <option>Thailand</option>
+            <option>Vietnam</option>
+            <option>Laos</option>
+        </select>
+
+        <input type="text" placeholder="City (e.g. Phnom Penh)" required>
+    </div>
+</div>
+
+<!-- Education Level -->
+<div class="form-group">
+    <label>Education Level<span class="required">*</span></label>
+    <select required>
+        <option value="">Select Level</option>
+        <option>High School</option>
+        <option>Foundation Year</option>
+        <option>Undergraduate</option>
+        <option>Graduate</option>
+    </select>
+</div>
+
+<!-- Field of Study -->
+<div class="form-group">
+    <label>Field of Study<span class="required">*</span></label>
+    <select required>
+        <option value="">Select Field</option>
+        <option>Computer Science</option>
+        <option>Cybersecurity</option>
+        <option>Engineering</option>
+        <option>Business</option>
+    </select>
+</div>
+
+<!-- Scholarship Type -->
+<div class="form-group">
+    <label>Scholarship Type<span class="required">*</span></label>
+    <div class="name-row">
+        <label><input type="radio" name="scholarship" required> Full</label>
+        <label><input type="radio" name="scholarship"> Partial</label>
+    </div>
+</div>
+
+<!-- Skills -->
+<div class="form-group">
+    <label>Skills</label>
+    <div class="name-row">
+        <label><input type="checkbox"> Programming</label>
+        <label><input type="checkbox"> Networking</label>
+        <label><input type="checkbox"> Design</label>
+    </div>
+</div>
+
+<!-- Reason -->
+<div class="form-group">
+    <label>Why are you applying?</label>
+    <textarea rows="4" placeholder="Write your reason here..."></textarea>
+</div>
+
+<!-- Agreement -->
+<div class="form-group">
+    <label>
+        <input type="checkbox" required>
+        I confirm all information provided is correct
+    </label>
+</div>
+
+<!-- Submit -->
+<div class="submit-group">
+    <button type="submit" class="submit-btn">Submit Application</button>
+</div>
+
+</form>
+</div>
+
+</body>
+</html>

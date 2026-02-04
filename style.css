@@ -1,0 +1,235 @@
+/* ============================================
+   RESET AND BASE STYLES
+   ============================================ */
+
+/* This removes default margins and padding from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes width/height include padding and border */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* ============================================
+   NAVIGATION BAR (Using Flexbox)
+   ============================================ */
+
+.navbar {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Navbar sticks to top when scrolling */
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    /* FLEXBOX: Arranges logo and menu horizontally */
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, menu right */
+    align-items: center; /* Centers items vertically */
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    list-style: none; /* Removes bullet points */
+    
+    /* FLEXBOX: Arranges menu items horizontally */
+    display: flex;
+    gap: 2rem; /* Space between menu items */
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none; /* Removes underline */
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative; /* Needed for the underline effect */
+    transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* HOVER EFFECT 1: Underline and color change on menu items */
+.nav-menu a::after {
+    content: ''; /* Creates an invisible element */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Starts with no width */
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s ease; /* Smooth width change */
+}
+
+.nav-menu a:hover {
+    color: #3498db; /* Changes text color on hover */
+}
+
+.nav-menu a:hover::after {
+    width: 100%; /* Underline expands to full width */
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* ============================================
+   CARDS GRID (Using CSS Grid)
+   ============================================ */
+
+.cards-grid {
+    /* CSS GRID: Creates a 2-dimensional layout */
+    display: grid;
+    
+    /* DESKTOP: 3 columns, each takes equal space (1 fraction) */
+    grid-template-columns: repeat(3, 1fr);
+    
+    gap: 2rem; /* Space between cards */
+}
+
+/* ============================================
+   CARD COMPONENT
+   ============================================ */
+
+.card {
+    background-color: white;
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hides overflow from image */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    
+    /* Smooth transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card image styling */
+.card img {
+    width: 100%; /* Image fills card width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Crops image to fit nicely */
+    display: block; /* Removes small gap below image */
+}
+
+/* Card text content */
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.price {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* HOVER EFFECT 2: Shadow and lift on card hover */
+.card:hover {
+    transform: translateY(-5px); /* Moves card up 5 pixels */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Larger shadow */
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* ============================================
+   MEDIA QUERIES (Responsive Design)
+   ============================================ */
+
+/* TABLET: Screen width between 768px and 1024px */
+@media (max-width: 1024px) {
+    .cards-grid {
+        /* Changes to 2 columns on tablet */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem; /* Reduces gap between menu items */
+    }
+}
+
+/* MOBILE: Screen width 768px or smaller */
+@media (max-width: 768px) {
+    .cards-grid {
+        /* Changes to 1 column on mobile - cards stack vertically */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .nav-container {
+        /* Stack logo and menu vertically on small screens */
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* EXTRA SMALL MOBILE: Screen width 480px or smaller */
+@media (max-width: 480px) {
+    .nav-menu {
+        /* Stack menu items vertically on very small screens */
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+}
